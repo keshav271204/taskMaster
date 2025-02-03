@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share this App - Task Master</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Share Task Master</h1>
+        <p>Spread the word about Task Master! Use the options below to share:</p>
+        
+        <div class="share-buttons">
+            <button onclick="shareViaWhatsApp()">Share via WhatsApp</button>
+            <button onclick="shareViaEmail()">Share via Email</button>
+            <button onclick="copyLink()">Copy Link</button>
+        </div>
+        
+        <a href="index.html">← Back to Home</a>
+    </div>
+
+    <script>
+        function shareViaWhatsApp() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://wa.me/?text=Check out Task Master! ${url}`, '_blank');
+        }
+
+        function shareViaEmail() {
+            const subject = encodeURIComponent('Check out Task Master!');
+            const body = encodeURIComponent(`I found this amazing app called Task Master. Check it out: ${window.location.href}`);
+            window.open(`mailto:?subject=${subject}&body=${body}`, '_self');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('Link copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>

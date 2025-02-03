@@ -1,0 +1,307 @@
+/* Reset and basic setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    overflow-y: auto; /* Allow scrolling */
+    color: #E1E1E6;
+}
+
+/* Background */
+#background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #1E1E2C, #252836, #1E1E2C);
+    background-size: 200% 200%;
+    animation: gradientMove 10s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #2C2F40;
+    padding-top: 20px;
+    color: #F2A365;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #E1E1E6;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    padding: 10px 20px;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #1E1E2C;
+}
+
+/* Toggle Container */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+.toggle-label {
+    color: #E1E1E6;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.toggle {
+    width: 40px;
+    height: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #B0B0B5;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.toggle:checked {
+    background: #F2A365;
+}
+
+.toggle:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    transition: transform 0.3s;
+}
+
+.toggle:checked:before {
+    transform: translateX(20px);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 200px; /* Space for the sidebar */
+    padding: 20px;
+    min-height: 100vh; /* Ensure content is at least full height */
+    padding-bottom: 100px; /* Make room for footer */
+}
+
+/* Title */
+header h1 {
+    font-size: 2.5rem;
+    color: #F2A365;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+header p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #B0B0B5;
+}
+
+/* Cards Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjusted for 3 columns */
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Card Styling */
+
+.card {
+    background-color: rgba(44, 47, 64, 0.65); /* Semi-transparent background */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(44, 47, 64, 0.95); /* Slightly less transparent on hover */
+}
+
+
+.card i {
+    font-size: 2rem;
+    color: #F2A365;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #B0B0B5;
+}
+
+.card .btn {
+    background-color: #F2A365;
+    color: #3f3f3f;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card .btn:hover {
+    background-color: #E1E1E6;
+    color: #F2A365;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2C2F40;
+    color: #F2A365;
+    width: calc(100% - 220px); /* Adjusts width to avoid overlap with scrollbar */
+    margin-left: 200px; /* Aligns with the sidebar */
+    border-radius: 10px 10px 10px 10px; /* Rounded top corners */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Adds a shadow for visual separation */
+    position: relative; /* Keeps it from overlapping content */
+    margin-top: 20px; /* Adds spacing above the footer */
+}
+
+/* Button Styling (Non-hover state) */
+.card .btn {
+    background-color: #F2A365;  /* Button's background color */
+    color: #3f3f3f;  /* Text color */
+    border: none;
+    padding: 8px 15px;  /* Reduced padding to make the button smaller */
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;  /* Align items horizontally */
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;  /* Smooth transition for all properties */
+    text-align: center;  /* Center text */
+    text-decoration: none;  /* Remove underline */
+    position: relative;  /* Ensure proper alignment */
+}
+
+/* Styling the icon inside the button */
+.card .btn i {
+    margin-right: 8px;  /* Space between icon and text */
+    color: #2C2F40;  /* Icon color */
+    transition: color 0.3s ease, transform 0.3s ease;  /* Smooth transition for color and rotation */
+    font-size: 1.2rem;  /* Slightly larger icon size */
+}
+
+/* Button Hover Effect */
+.card .btn:hover {
+    background-color: #E1E1E6;  /* Lighter background on hover */
+    color: #F2A365;  /* Change text color on hover */
+}
+
+/* Hover Effect for the Icon */
+.card .btn:hover i {
+    transform: rotate(360deg);  /* Rotate the icon on hover */
+}
+
+/* Specific Launch Tool Button Styling */
+.card .launch-btn {
+    background-color: #E1E1E6;  /* Lighter background */
+    color: #2C2F40;  /* Darker text for contrast */
+    font-weight: bold;  /* Bold text */
+    padding: 8px 15px;  /* Smaller padding for a compact button */
+    text-transform: uppercase;  /* Capitalize text */
+    transition: all 0.3s ease;  /* Smooth transition for all properties */
+    display: inline-flex;  /* Align items horizontally */
+    align-items: center;  /* Vertically center the content */
+    justify-content: center;  /* Horizontally center the content */
+}
+
+/* Hover Effect for Launch Tool Button */
+.card .launch-btn:hover {
+    background-color: #F2A365;  /* Change background color on hover */
+    color: #2C2F40;  /* Text color remains the same */
+}
+
+/* Hover Effect for Icon in Launch Button */
+.card .launch-btn:hover i {
+    transform: scale(1.2);  /* Scale up the icon on hover */
+}
+/* Semi-Transparent Sidebar */
+/* Semi-Transparent Sidebar with Rounded Corners */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: rgba(44, 47, 64, 0.85); /* Semi-transparent background */
+    padding-top: 20px;
+    color: #F2A365;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    border-radius: 10px 10px 10px 10px; /* Rounded top-left and bottom-left corners */
+}
+
+
+/* Cylindrical Search Bar */
+.search-bar {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px; /* Cylindrical shape */
+    background-color: rgba(44, 47, 64, 0.7); /* Slightly transparent background */
+    color: #E1E1E6;
+    font-size: 1rem;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar::placeholder {
+    color: #B0B0B5;
+}

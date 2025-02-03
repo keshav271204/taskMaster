@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Master</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="background"></div>
+
+    <nav class="sidebar">
+        <h2>Task Master</h2>
+        <div class="search-bar-container">
+            <input type="text" placeholder="Search..." class="search-bar" id="search-bar">
+        </div>
+    
+        <ul id="sidebar-links">
+            <li><a href="about.html" class="search-item"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="rate.html" class="search-item"><i class="fas fa-star"></i> Rate this App</a></li>
+            <li><a href="share.html" class="search-item"><i class="fas fa-share-alt"></i> Share this App</a></li>
+            <li><a href="pro-version.html" class="search-item"><i class="fas fa-crown"></i> Pro Version (Ads Free)</a></li>
+            <li><a href="issue.html" class="search-item"><i class="fas fa-exclamation-circle"></i> Have an Issue</a></li>
+            <li><a href="feedback.html" class="search-item"><i class="fas fa-comment-alt"></i> Feedback/Query</a></li>
+            <li><a href="bug-report.html" class="search-item"><i class="fas fa-bug"></i> Report a Bug</a></li>
+        </ul>
+    
+        <div class="toggle-container">
+            <label for="theme-toggle" class="toggle-label"><i class="fas fa-lightbulb"></i> Dynamic Background</label>
+            <input type="checkbox" id="theme-toggle" class="toggle" checked>
+        </div>
+    </nav>
+    
+
+    <div class="main-content">
+        <header>
+            <h1>Everything you need, nothing you don't.</h1>
+        </header>
+
+        <div class="card-grid" id="card-grid">
+            <div class="card">
+                <i class="fas fa-calculator"></i>
+                <h2>Calculator</h2>
+                <p>Simple calculator for basic arithmetic operations.</p>
+                <a href="calc/calc.html" class="btn"><i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-exchange-alt"></i>
+                <h2>Currency Converter</h2>
+                <p>Convert currencies at real-time rates.</p>
+                <a href="curr/Currency.html" class="btn"><i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-birthday-cake"></i>
+                <h2>Age Calculator</h2>
+                <p>Calculate age based on your birthdate.</p>
+                <a href="age/age.html" class="btn"><i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-align-left"></i>
+                <h2>Word Counter</h2>
+                <p>Count words and characters in a text.</p>
+                <a href="counter/word.html" class="btn"><i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-key"></i>
+                <h2>Password Generator</h2>
+                <p>Generate secure random passwords.</p>
+                <a href="password/index.html" class="btn"><i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-text-height"></i>
+                <h2>Word Replacer</h2>
+                <p>Replace words in a given text.</p>
+                <a href="replacer/replacer.html" class="btn"><i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-qrcode"></i>
+                <h2>QR Code Generator</h2>
+                <p>Create QR codes for URLs or text.</p>
+                <a href="QR/qr.html" class="btn"><i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-check-circle"></i>
+                <h2>Todo List</h2>
+                <p>Manage your tasks and to-dos easily.</p>
+                <a href="Todo-List/index.html" class="btn"><i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-file-alt"></i>
+                <h2>Resume Builder</h2>
+                <p>Build professional resumes quickly.</p>
+                <a href="resume/resume.html" class="btn"><i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-certificate"></i>
+                <h2>Certificate Maker</h2>
+                <p>Create certificates with custom designs.</p>
+                <a href="certificate/certificate.html" class="btn"><i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-palette"></i>
+                <h2>Color Palette Generator</h2>
+                <p>Generate beautiful color palettes.</p>
+                <a href="color/color.html" class="btn"><i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-gamepad"></i>
+                <h2>Number Guess Game</h2>
+                <p>Guess a random number and win!</p>
+                <a href="number-guess-game-project-main/index.html" class="btn"><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 Task Master. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
